@@ -1,10 +1,16 @@
 
 import subprocess as sp
+from typing import (
+    Union, Tuple
+)
 
 
-def cmd(*args):
+def cmd(* args: str) -> Tuple[str, Union[str, None]]:
 
-    stmt = []
+    if not args:
+        return tuple()
+
+    stmt: [str] = []
     for arg in args:
         if ' ' in arg:
             stmt.extend(arg.split())
