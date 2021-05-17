@@ -2,15 +2,17 @@
 
 > the perfect wrapper for subprocess.run
 
+## Goal
+
+Write Shell commands in Python with ease.
+
 ## Description 
 
 This module is meant to ease use of `subprocess.run`,
 minimizing and reducing all possible edge cases that
 are prone to come with use of traditional `run()`.
 
-## Goal
 
-Write Shell commands in Python with ease!
 
 ## Dependencies
 
@@ -46,7 +48,25 @@ Importing and using the function is easy.
     cmd('mkdir -p ', NEW_DIR_P, \
     '&& cd', NEW_DIR_P, \
     '&& npm install')
+    
+See [/examples](https://github.com/samocorp/superprocessor/tree/master/examples) for more use cases.
 
+
+Since a tuple is returned, you have to unpack it for every call.
+
+    # WRONG
+    OUT = cmd(...)
+    
+    
+    # RIGHT
+    OUT, ERR = cmd(...)
+    
+Although you might end up un-naming it
+
+     out, _ = cmd(...)
+     
+Happy Scripting :-)
+    
 ## License
 
 This project is governed by the MIT License.
