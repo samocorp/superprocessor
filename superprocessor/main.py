@@ -3,6 +3,10 @@ import subprocess as sp
 from typing import (
     Union, Tuple
 )
+from superprocessor.util import (
+    set_logs, set_defaults, log,
+)
+
 
 """
 Samo c 2021
@@ -10,9 +14,8 @@ Author: Samoto
 """
 
 
-def cmd(* args: str) -> Tuple[str, Union[str, None]]:
+def cmd(* args: str, ** kwargs) -> Tuple[str, Union[str, None]]:
     """
-
     :param args: list of strings --
         to be concatenated into stmt
     :return: tuple --
@@ -20,17 +23,29 @@ def cmd(* args: str) -> Tuple[str, Union[str, None]]:
     """
 
     if not args:
+        log(f'leaving early: args = {args}')
         return tuple()
+
+    set_defaults()
+
+    for k, v in kwargs.items():
+        {
+            'log': lambda: set_logs(enabled=True),
+        }.get(k, lambda: None)()
 
     stmt: [str] = []
     for arg in args:
-        if ' ' in arg:
-            stmt.extend(arg.split())
+        if ' ' in arg and isinstance(arg, str):
+            stmt.extend(str(arg.split()))
         else:
-            stmt.append(arg)
+            stmt.append(str(arg))
+
+    log(f'stmt built: {stmt}')
 
     resp = sp.run(stmt,
                   capture_output=True,
                   text=True)
+
+    log(f'response: {resp}')
 
     return resp.stdout, resp.stderr or None
