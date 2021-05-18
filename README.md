@@ -61,12 +61,21 @@ Since a tuple is returned, you have to unpack it for every call.
     # RIGHT
     OUT, ERR = cmd(...)
     
-Although you might end up un-naming it
+Although unrecommended, you might end up un-naming it
 
      out, _ = cmd(...)
      
 Happy Scripting :-)
     
+    
+## Support
+
+Please reach out to us for anything at
+
+<thesamocorp@gmail.com> 
+
+Create issues, fork and request merge requests, and don't be a stranger.
+
 ## License
 
 This project is governed by the MIT License.
