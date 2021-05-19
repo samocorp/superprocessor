@@ -1,13 +1,13 @@
 
 import setuptools
-import version
+
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="superprocessor",
-    version=version.VERSION,
+    version='0.1.0',
     author="samo",
     author_email="thesamogroup@gmail.com",
     description="SuperProcessor: the perfect wrapper for subprocess.run",
