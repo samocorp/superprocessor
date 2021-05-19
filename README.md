@@ -4,7 +4,7 @@
 
 ## Goal
 
-Write Shell commands in Python with ease.
+Write Shell commands in Python with ease. Simplify Scripting for All.
 
 ## Description 
 
@@ -64,8 +64,21 @@ Since a tuple is returned, you have to unpack it for every call.
 Although unrecommended, you might end up un-naming it
 
      out, _ = cmd(...)
+
+### Configurations
+
+     
+Create wickedly easy configuration overrides for example:
+
+    # logging insightful clues to stdout
+    # default: False
+    cmd(..., log=True)
+    # or environment SUPER_LOGS=TRUE     
+     
+     
      
 Happy Scripting :-)
+    
     
     
 ## Support
