@@ -34,7 +34,7 @@ or over git-pip
 
 This module is famous for the `cmd` function, which has a signature of 
 
-    cmd(* args: str) -> Tuple(stdout: str, stderr: Union[str, None])
+    cmd(* args: str, ** kwargs) -> Tuple(stdout: str, stderr: Union[str, None])
 
 As you can see, this function implements a Golang-style error handling, of returing
 both the std output and error of the command in the shell.
