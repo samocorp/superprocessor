@@ -22,11 +22,11 @@ def cmd(* args: str, ** kwargs) -> Tuple[str, Union[str, None]]:
         of length 2: std (output, error)
     """
 
+    set_defaults()
+
     if not args:
         log(f'leaving early: args = {args}')
         return tuple()
-
-    set_defaults()
 
     for k, v in kwargs.items():
         {
