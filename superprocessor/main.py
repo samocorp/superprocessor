@@ -36,7 +36,7 @@ def cmd(* args: str, ** kwargs) -> Tuple[str, Union[str, None]]:
     stmt: [str] = []
     for arg in args:
         if ' ' in arg and isinstance(arg, str):
-            stmt.extend(str(arg.split()))
+            stmt.extend(arg.split())
         else:
             stmt.append(str(arg))
 
