@@ -1,2 +1,2 @@
 
-import superprocessor
+from superprocessor.superprocessor import cmd

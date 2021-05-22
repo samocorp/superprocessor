@@ -1,5 +1,5 @@
 
-from superprocessor.main import cmd
+from superprocessor.superprocessor.main import cmd
 
 """
 Samo c 2021
