@@ -4,7 +4,7 @@ from typing import (
     Union, Tuple
 )
 
-from superprocessor.superprocessor.util import (
+from superprocessor.util import (
     set_logs, set_defaults, log,
 )
 
