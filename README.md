@@ -37,7 +37,7 @@ This module is famous for the `cmd` function, which has a signature of
     cmd(* args: str, ** kwargs) -> Tuple(stdout: str, stderr: Union[str, None])
 
 As you can see, this function implements a Golang-style error handling, of returing
-both the std output and error of the command in the shell.
+both the std output, error, and status code of the command in the shell.
 
 If no error is encountered, the second value of the returned tuple is of NoneType.
 
@@ -59,11 +59,11 @@ Since a tuple is returned, you have to unpack it for every call.
     
     
     # RIGHT
-    OUT, ERR = cmd(...)
+    OUT, ERR, STATUS = cmd(...)
     
-Although unrecommended, you might end up un-naming it
+Although unrecommended, you might end up un-naming parts of it
 
-     out, _ = cmd(...)
+     out, _, _ = cmd(...)
 
 ### Configurations
 
