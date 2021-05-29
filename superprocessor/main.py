@@ -15,7 +15,7 @@ Author: Samoto
 """
 
 
-def cmd(* args: str, ** kwargs) -> Tuple[str, Union[str, None]]:
+def cmd(* args: str, ** kwargs) -> Tuple[str, Union[str, None], int]:
     """
     :param args: list of strings --
         to be concatenated into stmt
@@ -49,4 +49,8 @@ def cmd(* args: str, ** kwargs) -> Tuple[str, Union[str, None]]:
 
     log(f'response: {resp}')
 
-    return resp.stdout, resp.stderr or None
+    return (
+        resp.stdout,
+        resp.stderr or None,
+        resp.returncode,
+    )
